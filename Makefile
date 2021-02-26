@@ -1,6 +1,10 @@
 CXX ?= clang++
 # clang++ -I/usr/local/include -lc++ -ldl -lfst -std=c++17 -stdlib=libc++ src/example.cpp
 
+# add graph-easy binary path
+# https://houbb.github.io/2018/09/04/tool-graph-easy
+export PATH := /usr/local/Cellar/perl/5.32.0/bin:$(PATH)
+
 # path #
 SRC_PATH = src
 BUILD_PATH = build
@@ -49,6 +53,12 @@ clean:
 	@echo "Deleting directories"
 	@$(RM) -r $(BUILD_PATH)
 	@$(RM) -r $(BIN_PATH)
+
+# Usage: make draw file=example.fst
+.PHONY: draw
+draw:
+	@fstdraw "workspace/$(file)" \
+		| graph-easy --as_boxart
 
 # checks the executable and symlinks to the output
 .PHONY: all

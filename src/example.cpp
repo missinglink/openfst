@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-  string filename = "demo2.fst";
+  string filename = "example.fst";
 
   demo(filename);
 
