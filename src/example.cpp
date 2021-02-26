@@ -26,7 +26,7 @@ int main()
   fst.SetFinal(2, 3.5);  // 1st arg is state ID, 2nd arg weight
 
   // Writes the result FST to a file.
-  fst.Write("result.fst");
+  fst.Write("workspace/result.fst");
 
   return 0;
 }
